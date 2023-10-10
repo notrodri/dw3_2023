@@ -66,7 +66,8 @@ public function formulario(){
     public function buscar(Request $request){
         $buscar=$request->input('buscar');
         $clientes=Cliente::where('nombre','like',"%$buscar%")->get();
-        return view('clientes.index',compact('buscar','clientes'));
+        return view('clientes.index',compact('buscar','clientes'))->with('danger','No se encontró lo que buscaba.');
+        //return redirect()->route('index')->with('success','Se creo correctamente!');
     }
 
 

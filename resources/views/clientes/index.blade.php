@@ -7,8 +7,12 @@
 	<div class="alert alert-success">
 	{{session('success')}}	
 	</div> 
+    @elseif(session('danger'))
+    <div class="alert alert-danger">
+    {{session('danger')}}
+    </div>
 	@endif
-        <h1>Listado de Clientes</h1>
+        <h1><a href="{{route('index')}}" class="link-primary"> Listado de Clientes</a></h1>
 
         <div class="d-flex justify-content-between align-items-center mb-3">
             <a href="{{ route('formulario') }}" class="btn btn-primary"> Nuevo </a>
