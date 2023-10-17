@@ -7,10 +7,6 @@
 	<div class="alert alert-success">
 	{{session('success')}}	
 	</div> 
-    @elseif(session('danger'))
-    <div class="alert alert-danger">
-    {{session('danger')}}
-    </div>
 	@endif
         <h1><a href="{{route('index')}}" class="link-primary"> Listado de Clientes</a></h1>
 
@@ -21,7 +17,11 @@
                 <button class="btn btn-outline-primary" type="submit">Buscar</button>
             </form>
         </div>
-
+    @if ($clientes->isEmpty())
+    <div class="alert alert-warning" role="alert">
+  No hay datos disponibles. <a href="{{route('index')}}" class="alert-link">Volver a menu principal</a>.
+</div>
+    @else
 
         <table class="table table-bordered">
             <thead>
@@ -76,4 +76,5 @@
                 @endforeach
             </tbody>
         </table>
+    @endif
     </div>
