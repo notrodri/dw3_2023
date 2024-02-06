@@ -9,14 +9,14 @@ use Symfony\Component\CssSelector\Node\FunctionNode;
 extends Controller {
 
 public function index(){ 
-//Obtener datos por ORM Eloquent    
+//Obtener datos por ORM Eloquent nose que pasa   
 $clientes = Cliente::All();
 //Obtener datos por el metodo get
 //$clientes=DB::table('clientes')
 //->get();
 //$clientes=DB::insert('select * from clientes where estado= "Activo"');
 
- 
+
 return view('clientes.index',compact('clientes')); } 
 
 
